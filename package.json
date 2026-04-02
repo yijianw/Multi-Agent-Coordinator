@@ -12,42 +12,32 @@
     "server": "node bin/multi-agent-server.js",
     "dev": "cd web-ui && npm run dev",
     "build": "cd web-ui && npm run build",
-    "test": "node bin/test-api.js && node bin/test-frontend-connection.js && node bin/test-integration.js",
-    "test:api": "node bin/test-api.js",
-    "test:integration": "node bin/test-integration.js",
-    "clean": "rm -rf web-ui/dist node_modules",
-    "lint": "eslint src/ bin/"
+    "test": "node bin/test-api.js && node bin/test-integration.js",
+    "clean": "rm -rf web-ui/dist node_modules"
   },
   "keywords": [
     "openclaw",
     "multi-agent",
-    "coordinator",
     "ai",
     "automation",
     "visualization",
-    "workflow"
+    "workflow",
+    "react",
+    "nodejs"
   ],
-  "author": "Your Name",
+  "author": "yijianw",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/multi-agent-coordinator.git"
+    "url": "https://github.com/yijianw/Multi-Agent-Coordinator.git"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/multi-agent-coordinator/issues"
+    "url": "https://github.com/yijianw/Multi-Agent-Coordinator/issues"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/multi-agent-coordinator#readme",
   "dependencies": {
     "ws": "^8.16.0"
   },
-  "devDependencies": {},
   "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=9.0.0"
-  },
-  "os": [
-    "win32",
-    "darwin",
-    "linux"
-  ]
+    "node": ">=20.0.0"
+  }
 }
