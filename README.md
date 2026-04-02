@@ -22,8 +22,7 @@
 我们深入研究了 Claude Code 的多 Agent 并发协调机制，特别是其 Coordinator 模式、Agent 通信总线和任务调度系统。站在巨人的肩膀上，我们得以快速搭建起这个项目的框架。
 
 **特别感谢:**
-- **Claude Code 团队** - 开源了优秀的多 Agent 协调架构
-- **核心参考文档:** `D:\claude-code-source-code-main\CORE-CODE-多 Agent 并发协调.md`
+- **Claude Code 团队** - 开源了优秀的多 Agent 协调架构 （伟大的开源精神！被动开源也是开源！手动狗头.gif)
 - **关键启发:** Agent 类型系统、消息总线设计、工作流模式实现
 
 **本项目借用了前人的智慧，在此表示诚挚的感谢！** 🙇
