@@ -1,0 +1,58 @@
+.workflow-selector {
+  margin-bottom: 16px;
+}
+
+.mode-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.mode-option {
+  cursor: pointer;
+}
+
+.mode-option input[type="radio"] {
+  display: none;
+}
+
+.mode-card {
+  display: block;
+  padding: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.mode-option:hover .mode-card {
+  border-color: #4a90d9;
+  background: #f0f7ff;
+}
+
+.mode-option.selected .mode-card {
+  border-color: #4a90d9;
+  background: #e6f0ff;
+  box-shadow: 0 2px 8px rgba(74, 144, 217, 0.2);
+}
+
+.mode-icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.mode-name {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.mode-desc {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}

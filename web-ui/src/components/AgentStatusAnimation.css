@@ -1,0 +1,349 @@
+.agent-status-card {
+  background: linear-gradient(135deg, rgba(30, 30, 50, 0.9) 0%, rgba(20, 20, 40, 0.95) 100%);
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #4a4a6a;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.agent-status-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* 状态特定样式 */
+.agent-status-card.running {
+  border-color: #10b981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.agent-status-card.paused {
+  border-color: #f59e0b;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.agent-status-card.stopped {
+  border-color: #ef4444;
+  opacity: 0.7;
+}
+
+.agent-status-card.completed {
+  border-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.agent-status-card.failed {
+  border-color: #dc2626;
+  animation: shake 0.5s ease-in-out;
+}
+
+/* 头部区域 */
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.agent-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.agent-basic-info {
+  flex: 1;
+}
+
+.agent-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 4px;
+}
+
+.agent-role {
+  font-size: 13px;
+  color: #a0a0c0;
+}
+
+/* 状态指示器 */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.running .status-dot { background: #10b981; }
+.status-indicator.paused .status-dot { background: #f59e0b; }
+.status-indicator.stopped .status-dot { background: #ef4444; }
+.status-indicator.completed .status-dot { background: #3b82f6; }
+.status-indicator.failed .status-dot { background: #dc2626; }
+.status-indicator.idle .status-dot { background: #6b7280; }
+
+.status-label {
+  color: #e0e0e0;
+}
+
+/* 进度条区域 */
+.progress-section {
+  margin-bottom: 20px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.progress-label {
+  font-size: 13px;
+  color: #a0a0c0;
+}
+
+.progress-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.progress-bar {
+  height: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 5px;
+}
+
+.progress-fill.running {
+  background: linear-gradient(90deg, #059669, #10b981);
+}
+
+.progress-fill.paused {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+}
+
+.progress-fill.completed {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+}
+
+.progress-fill.failed {
+  background: linear-gradient(90deg, #dc2626, #ef4444);
+}
+
+/* 当前任务 */
+.current-task {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.task-label {
+  font-size: 12px;
+  color: #606080;
+  margin-bottom: 8px;
+}
+
+.task-content {
+  font-size: 14px;
+  color: #e0e0e0;
+  line-height: 1.5;
+}
+
+/* 指标网格 */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.metric-item {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 11px;
+  color: #606080;
+}
+
+/* 状态动画 */
+.status-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* 工作粒子效果 */
+.working-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-float 2s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.particle:nth-child(1) { left: 10%; bottom: -10px; }
+.particle:nth-child(2) { left: 30%; bottom: -10px; animation-delay: calc(var(--delay) + 0.3s); }
+.particle:nth-child(3) { left: 50%; bottom: -10px; animation-delay: calc(var(--delay) + 0.6s); }
+.particle:nth-child(4) { left: 70%; bottom: -10px; animation-delay: calc(var(--delay) + 0.9s); }
+.particle:nth-child(5) { left: 90%; bottom: -10px; animation-delay: calc(var(--delay) + 1.2s); }
+
+/* 庆祝彩带效果 */
+.celebrate-confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color);
+  opacity: 0;
+  animation: confetti-fall 3s ease-out infinite;
+  animation-delay: var(--delay);
+}
+
+.confetti:nth-child(1) { left: 10%; animation-delay: 0s; }
+.confetti:nth-child(2) { left: 20%; animation-delay: 0.2s; }
+.confetti:nth-child(3) { left: 30%; animation-delay: 0.4s; }
+.confetti:nth-child(4) { left: 40%; animation-delay: 0.6s; }
+.confetti:nth-child(5) { left: 50%; animation-delay: 0.8s; }
+.confetti:nth-child(6) { left: 60%; animation-delay: 1s; }
+.confetti:nth-child(7) { left: 70%; animation-delay: 1.2s; }
+.confetti:nth-child(8) { left: 80%; animation-delay: 1.4s; }
+.confetti:nth-child(9) { left: 90%; animation-delay: 1.6s; }
+.confetti:nth-child(10) { left: 95%; animation-delay: 1.8s; }
+
+/* 动画关键帧 */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+@keyframes pulse-working {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes particle-float {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-300px) rotate(360deg);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(400px) rotate(720deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+@keyframes celebrate {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .agent-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .agent-name {
+    font-size: 16px;
+  }
+
+  .metric-value {
+    font-size: 16px;
+  }
+}

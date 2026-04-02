@@ -1,0 +1,53 @@
+{
+  "name": "multi-agent-coordinator",
+  "version": "1.0.0",
+  "description": "Powerful multi-agent parallel execution and visualization tool for OpenClaw",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "mac": "./bin/multi-agent-server.js"
+  },
+  "scripts": {
+    "start": "node bin/start.js",
+    "server": "node bin/multi-agent-server.js",
+    "dev": "cd web-ui && npm run dev",
+    "build": "cd web-ui && npm run build",
+    "test": "node bin/test-api.js && node bin/test-frontend-connection.js && node bin/test-integration.js",
+    "test:api": "node bin/test-api.js",
+    "test:integration": "node bin/test-integration.js",
+    "clean": "rm -rf web-ui/dist node_modules",
+    "lint": "eslint src/ bin/"
+  },
+  "keywords": [
+    "openclaw",
+    "multi-agent",
+    "coordinator",
+    "ai",
+    "automation",
+    "visualization",
+    "workflow"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/multi-agent-coordinator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/multi-agent-coordinator/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/multi-agent-coordinator#readme",
+  "dependencies": {
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ]
+}

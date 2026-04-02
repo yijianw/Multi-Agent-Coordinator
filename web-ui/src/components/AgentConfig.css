@@ -1,0 +1,135 @@
+.agent-config {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #fafafa;
+}
+
+.agent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.agent-type-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agent-type-selector label {
+  font-weight: 500;
+  color: #555;
+}
+
+.agent-type-selector select {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.agent-role {
+  margin-bottom: 12px;
+}
+
+.agent-role label {
+  display: block;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.agent-role input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.agent-role input:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+
+.agent-enhancement {
+  margin-bottom: 12px;
+}
+
+.agent-enhancement label {
+  display: block;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.agent-enhancement .icon {
+  margin-right: 4px;
+}
+
+.agent-enhancement textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.agent-enhancement textarea:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+
+.agent-description {
+  background: #f0f4f8;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #666;
+}
+
+.agent-description strong {
+  color: #444;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.agent-description p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.btn-remove {
+  background: #ff4444;
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-remove:hover:not(:disabled) {
+  background: #cc0000;
+}
+
+.btn-remove:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

@@ -1,0 +1,178 @@
+.progress-stats {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  padding: 20px;
+}
+
+.progress-stats h3 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #374151;
+}
+
+/* 整体进度 */
+.overall-progress {
+  margin-bottom: 24px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.progress-value {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.progress-bar-container {
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+/* 统计卡片网格 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card.time { background: #eff6ff; }
+.stat-card.agents { background: #f0fdf4; }
+.stat-card.running { background: #fef3c7; }
+.stat-card.completed { background: #dbeafe; }
+.stat-card.paused { background: #fef9c3; }
+.stat-card.efficiency { background: #fce7f3; }
+
+.stat-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Agent 详情 */
+.agent-details h4 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #374151;
+}
+
+.agent-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agent-progress-item {
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.agent-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.agent-info .agent-icon {
+  font-size: 18px;
+}
+
+.agent-info .agent-name {
+  flex: 1;
+  font-weight: 500;
+  color: #374151;
+}
+
+.agent-status {
+  font-size: 12px;
+}
+
+.agent-progress-bar {
+  position: relative;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.agent-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.agent-progress-text {
+  position: absolute;
+  right: 0;
+  top: -18px;
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+
+  .progress-value {
+    font-size: 20px;
+  }
+}

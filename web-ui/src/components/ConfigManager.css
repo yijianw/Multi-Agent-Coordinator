@@ -1,0 +1,89 @@
+.config-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.config-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.config-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.config-save {
+  display: flex;
+  gap: 8px;
+}
+
+.config-name-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.config-name-input:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+
+.config-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.config-empty {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-size: 14px;
+}
+
+.config-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.config-item:hover {
+  border-color: #4a90d9;
+  box-shadow: 0 2px 8px rgba(74, 144, 217, 0.15);
+}
+
+.config-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.config-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.config-item-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #666;
+}
+
+.config-item-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

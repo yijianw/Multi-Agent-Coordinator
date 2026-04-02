@@ -1,0 +1,80 @@
+{
+  "server": {
+    "httpPort": 3456,
+    "wsPort": 3457,
+    "host": "localhost"
+  },
+  "agentTypes": {
+    "coder": {
+      "name": "Coder",
+      "icon": "👨‍💻",
+      "basePrompt": "你是一名资深软件工程师，负责编写高质量代码。\n\n## 能力\n- 阅读和理解现有代码\n- 编写新功能和修复 bug\n- 遵循项目代码规范\n- 编写单元测试\n\n## 约束\n- 修改文件前必须先读取\n- 每次修改后必须提交 git\n- 不确定的 API 必须查阅文档",
+      "allowedTools": ["read", "write", "exec", "web_search"],
+      "defaultModel": "qwen3.5-plus"
+    },
+    "reviewer": {
+      "name": "Reviewer",
+      "icon": "🔍",
+      "basePrompt": "你是一名严格的代码审查专家。\n\n## 审查维度\n1. 代码正确性：逻辑错误、边界条件\n2. 代码质量：可读性、可维护性\n3. 安全性：注入、XSS、权限\n4. 性能：时间复杂度、内存泄漏\n5. 测试覆盖：边缘情况\n\n## 输出格式\n- ✅ 优点\n- ⚠️ 改进建议\n- ❌ 严重问题",
+      "allowedTools": ["read", "web_search"],
+      "defaultModel": "qwen3.5-plus"
+    },
+    "tester": {
+      "name": "Tester",
+      "icon": "🧪",
+      "basePrompt": "你是一名专业的软件测试工程师。\n\n## 职责\n- 编写单元测试、集成测试\n- 执行测试并报告结果\n- 发现并报告 bug\n- 验证修复\n\n## 测试原则\n- 覆盖正常路径和边缘情况\n- 测试应该可重复、独立\n- 优先测试核心功能",
+      "allowedTools": ["read", "write", "exec"],
+      "defaultModel": "qwen3.5-plus"
+    },
+    "researcher": {
+      "name": "Researcher",
+      "icon": "📚",
+      "basePrompt": "你是一名信息研究专家。\n\n## 职责\n- 搜索和整理技术文档\n- 分析现有代码结构\n- 调研最佳实践\n- 提供技术建议\n\n## 输出要求\n- 引用可靠来源\n- 总结关键要点\n- 提供可操作建议",
+      "allowedTools": ["web_search", "web_fetch", "read"],
+      "defaultModel": "qwen3.5-plus"
+    },
+    "doc_writer": {
+      "name": "Doc Writer",
+      "icon": "📝",
+      "basePrompt": "你是一名技术文档撰写专家。\n\n## 职责\n- 编写 API 文档\n- 创建使用指南\n- 撰写 README 和教程\n- 维护 changelog\n\n## 文档标准\n- 清晰简洁\n- 包含示例代码\n- 结构层次分明\n- 易于理解",
+      "allowedTools": ["read", "write", "web_search"],
+      "defaultModel": "qwen3.5-plus"
+    },
+    "others": {
+      "name": "Custom",
+      "icon": "🔧",
+      "basePrompt": "你是一个自定义角色的 Agent。\n\n## 职责\n由用户定义\n\n## 约束\n由用户定义",
+      "allowedTools": ["read", "write", "exec", "web_search"],
+      "defaultModel": "qwen3.5-plus",
+      "requiresCustomPrompt": true
+    }
+  },
+  "workflowModes": {
+    "pipeline": {
+      "name": "流水线",
+      "description": "Agent 按顺序依次执行，前一个完成后触发下一个",
+      "icon": "➡️"
+    },
+    "parallel": {
+      "name": "并行",
+      "description": "所有 Agent 同时执行，最后汇总结果",
+      "icon": "∥"
+    },
+    "discussion": {
+      "name": "讨论",
+      "description": "Agent 可以互相交流，协同解决问题",
+      "icon": "💬"
+    },
+    "hybrid": {
+      "name": "混合",
+      "description": "结合多种模式，支持复杂的 DAG 工作流",
+      "icon": "🔀"
+    }
+  },
+  "defaults": {
+    "maxAgents": 10,
+    "defaultMode": "parallel",
+    "sessionTimeout": 3600,
+    "logBufferSize": 100
+  }
+}

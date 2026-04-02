@@ -1,0 +1,87 @@
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.error-content {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.error-content h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.error-content > p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.error-details {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.error-details strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #856404;
+}
+
+.error-details pre {
+  background: white;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  overflow-x: auto;
+  color: #c62828;
+}
+
+.error-stack {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.error-stack summary {
+  cursor: pointer;
+  color: #666;
+  font-weight: 500;
+}
+
+.error-stack pre {
+  margin-top: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 4px;
+  font-size: 12px;
+  overflow-x: auto;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.error-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
